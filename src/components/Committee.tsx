@@ -70,8 +70,16 @@ export function recoverSettings(committee?: CommitteeData): Required<SettingsDat
     committee?.settings.motionVotes 
     ?? DEFAULT_SETTINGS.motionVotes;
 
+  const motionsArePublic: boolean = 
+    committee?.settings.motionsArePublic 
+    ?? DEFAULT_SETTINGS.motionsArePublic;
+
   return {
-    timersInSeparateColumns, moveQueueUp, autoNextSpeaker, motionVotes
+    timersInSeparateColumns,
+    moveQueueUp, 
+    autoNextSpeaker, 
+    motionVotes,
+    motionsArePublic
   };
 }
 

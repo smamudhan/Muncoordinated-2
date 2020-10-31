@@ -945,6 +945,15 @@ export class MotionsComponent extends React.Component<Props & Hooks, State> {
         {renderAdder(committee)}
         <Divider hidden />
         <Checkbox
+          label="Delegates can propose motions"
+          toggle
+          checked={recoverSettings(committee).motionsArePublic}
+          onChange={
+            checkboxHandler<SettingsData>(
+              committeeFref.child('settings'),
+              'motionsArePublic')}
+        />
+        <Checkbox
           label="Delegates can vote on motions"
           toggle
           checked={recoverSettings(committee).motionVotes}
